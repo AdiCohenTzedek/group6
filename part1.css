@@ -1,0 +1,76 @@
+/* סגנון כללי */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    background-color: #dff0d8; /* רקע ירוק פסטל */
+    color: #333; /* טקסט כהה */
+}
+
+header {
+    background-color: #dff0d8;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 150px); /* גובה הדף פחות הכותרת והכותרת התחתונה */
+}
+
+.nav-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* שתי עמודות */
+    gap: 15px; /* רווח בין הכפתורים */
+    text-align: center;
+}
+
+.nav-buttons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #5a6e5d; /* אפור כהה */
+    background-color: #f5f5f5; /* רקע בהיר */
+    border: 2px solid #ddd; /* מסגרת אפורה בהירה */
+    border-radius: 10px; /* קצוות מעוגלים */
+    padding: 10px;
+    font-size: 1.1em;
+    height: 80px; /* גובה מלבני */
+    width: 200px; /* רוחב מלבני */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* צל קל */
+}
+
+.nav-buttons a:hover {
+    background-color: #e0e0e0; /* אפור קצת יותר כהה */
+    transform: scale(1.05); /* הגדלה קלה */
+}
+
+footer {
+    background-color: #5a6e5d; /* אפור כהה */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 250px; /* מגדיר את הרוחב המקסימלי של התמונה */
+    height: auto; /* מבטיח שהתמונה תישאר בפרופורציה */
+    margin-bottom: 20px; /* רווח מתחת לתמונה */
+}
+
