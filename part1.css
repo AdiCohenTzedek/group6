@@ -1,6 +1,6 @@
 /* סגנון כללי */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Calibri', Arial, sans-serif;
     margin: 0;
     padding: 0;
     direction: rtl;
@@ -18,6 +18,11 @@ header {
 header h1 {
     margin: 0;
     font-size: 2.5em;
+}
+
+header {
+    margin-bottom: 0; /* ביטול רווחים נוספים בכותרת */
+    text-align: center; /* שמירה על מיקום התמונה במרכז */
 }
 
 main {
@@ -69,8 +74,17 @@ footer {
 .logo {
     display: block;
     margin: 0 auto;
-    max-width: 250px; /* מגדיר את הרוחב המקסימלי של התמונה */
-    height: auto; /* מבטיח שהתמונה תישאר בפרופורציה */
-    margin-bottom: 20px; /* רווח מתחת לתמונה */
+    max-width: 500px; /* הגדלת הרוחב המרבי של התמונה */
+    width: 100%; /* התאמת הרוחב למסך */
+    height: auto; /* שמירה על פרופורציות */
+    margin-bottom: 20px; /* צמצום הרווח מתחת לתמונה */
 }
 
+main {
+    display: flex;
+    flex-direction: column; /* הצגת התוכן בצורה אנכית */
+    align-items: center;
+    justify-content: flex-start; /* מיקום קרוב לתמונה */
+    gap: 10px; /* רווח אחיד בין הכפתורים */
+    margin-top: -30px; /* צמצום נוסף של הרווח מעל הכפתורים */
+}
