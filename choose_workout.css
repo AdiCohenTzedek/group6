@@ -1,0 +1,109 @@
+/* עיצוב כללי */
+body {
+    font-family: 'Calibri', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #dff0d8;
+    color: #5a6e5d;
+    text-align: center;
+    direction: rtl;
+}
+
+/* כותרת */
+header h1 {
+    font-size: 2.5em;
+    margin: 20px 0;
+    color: #5a6e5d;
+}
+
+/* בחירת ימים */
+.weekdays {
+    display: flex;
+    justify-content: center; /* מרכז את הימים */
+    margin: 20px 0;
+    gap: 5px; /* צמצום הרווח בין הימים */
+    flex-direction: row-reverse; /* סדר הפוך משמאל לימין */
+}
+
+.day {
+    width: 45px; /* התאמת גודל המעגלים */
+    height: 45px;
+    background-color: #ffffff; /* רקע לבן לימי השבוע */
+    color: #5a6e5d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em; /* גודל טקסט */
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.day:hover {
+    transform: scale(1.1); /* אפקט גדילה */
+}
+
+.highlighted {
+    background-color: #cfd8dc; /* היום המודגש */
+    color: #5a6e5d;
+}
+
+/* רשימת אימונים */
+.workout-list {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.workout-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.workout-info {
+    text-align: right;
+}
+
+.workout-info p {
+    margin: 5px 0;
+}
+
+.trainer {
+    font-size: 0.9em;
+    color: #8e8e8e;
+}
+
+/* עיצוב כפתור */
+.add-button {
+    background-color: #4caf50; /* ירוק */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+/* עיצוב זמן */
+.time {
+    font-size: 1.2em;
+    color: #5a6e5d;
+}
