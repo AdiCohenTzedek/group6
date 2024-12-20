@@ -19,22 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //the connection between html to JS at choose_workout
 document.addEventListener('DOMContentLoaded', () => {
-  const days = document.querySelectorAll('.weekdays .day');
-  if (days.length > 0) { // בודק אם יש אלמנטים
-    days.forEach(day => {
-      day.addEventListener('click', function() {
-        console.log('Day chosen:', this.textContent); // הדפסת שם היום לקונסול בלחיצה
-      });
-    });
-  } else {
-    console.log('No days were found.'); // הדפסה לקונסול אם לא נמצאו אלמנטים
-  }
-
   const addButtons = document.querySelectorAll('.workout-list .add-button');
-
   addButtons.forEach(button => {
     button.addEventListener('click', function() {
-      const workoutItem = this.parentNode;
+      // הסרת הסימון מכל השיעורים האחרים
+      document.querySelectorAll('.workout-item.selected').forEach(item => item.classList.remove('selected'));
+
+      // הוספת הסימון לשיעור הנוכחי
+      const workoutItem = this.closest('.workout-item');
+      workoutItem.classList.add('selected');
+
       const workoutInfo = workoutItem.querySelector('.workout-info').textContent.trim();
       const trainerName = workoutItem.querySelector('.trainer').textContent;
       const time = workoutItem.querySelector('.time').textContent;
@@ -44,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-//the connection between html to JS at login//
+//the connection between html to JS at login
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.querySelector('.login-form');
   if (loginForm) {
@@ -125,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
     const cells = document.querySelectorAll('td');
     cells.forEach(cell => {
         cell.addEventListener('mouseenter', () => {

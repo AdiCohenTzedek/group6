@@ -107,3 +107,9 @@ header h1 {
     font-size: 1.2em;
     color: #5a6e5d;
 }
+
+.workout-item.selected {
+    background-color: #d3d3d3; /* אפור בהיר */
+    font-size: 1.2em; /* גודל גדול יותר של הטקסט */
+}
+
