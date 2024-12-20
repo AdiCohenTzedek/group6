@@ -67,3 +67,11 @@ thead th:first-child {
     left: 0;
     z-index: 1;
 }
+
+/* הוספת הגדרת סטייל */
+td.highlight {
+    background-color: #cccccc !important; /* צבע רקע כהה יותר להדגשה */
+    cursor: pointer; /* מוסיף סמן יד כאשר העכבר עובר מעל */
+}
+
+

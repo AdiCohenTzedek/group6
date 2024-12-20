@@ -21,7 +21,7 @@ header h1 {
 }
 
 /* טופס */
-.sign-in-form {
+.sign-up-form {
     max-width: 500px;
     margin: 0 auto;
     display: flex;
