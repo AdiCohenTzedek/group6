@@ -32,7 +32,7 @@ table {
 }
 
 thead th {
-    background-color: #5a6e5d;
+    background-color: #5a6e5d; /* ירוק */
     color: white;
     font-size: 1.5em;
     padding: 10px;
@@ -59,7 +59,8 @@ tbody td:empty {
 /* עיצוב טור השעות */
 tbody td:first-child,
 thead th:first-child {
-    background-color: #f0f4c3;
+    background-color: #5a6e5d; /* ירוק */
+    color: white;
     font-weight: bold;
     text-align: right;
     padding-right: 15px;
@@ -68,10 +69,14 @@ thead th:first-child {
     z-index: 1;
 }
 
+tbody td:first-child:hover,
+thead th:first-child:hover {
+    background-color: #5a6e5d; /* מניעת שינוי צבע ב-hover */
+    cursor: default; /* מוסיף סמן יד כאשר העכבר עובר מעל */
+}
+
 /* הוספת הגדרת סטייל */
 td.highlight {
     background-color: #cccccc !important; /* צבע רקע כהה יותר להדגשה */
     cursor: pointer; /* מוסיף סמן יד כאשר העכבר עובר מעל */
 }
-
-
