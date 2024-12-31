@@ -17,11 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-//the connection between html to JS at choose_workout
+// the connection between html to JS at choose_workout
 document.addEventListener('DOMContentLoaded', () => {
   const addButtons = document.querySelectorAll('.workout-list .add-button');
   addButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       // הסרת הסימון מכל השיעורים האחרים
       document.querySelectorAll('.workout-item.selected').forEach(item => item.classList.remove('selected'));
 
@@ -33,10 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const trainerName = workoutItem.querySelector('.trainer').textContent;
       const time = workoutItem.querySelector('.time').textContent;
 
-      console.log(`Added workout: ${workoutInfo}, Trainer: ${trainerName}, Time: ${time}`);
+      // הוספת הודעה קופצת מותאמת אישית
+      alert(`נבחר אימון: ${workoutInfo}\nמאמן: ${trainerName}\nשעה: ${time}`);
     });
   });
 });
+
 
 //the connection between html to JS at login
 document.addEventListener('DOMContentLoaded', () => {

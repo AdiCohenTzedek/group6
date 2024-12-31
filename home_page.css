@@ -78,6 +78,16 @@ footer {
     width: 100%; /* התאמת הרוחב למסך */
     height: auto; /* שמירה על פרופורציות */
     margin-bottom: 20px; /* צמצום הרווח מתחת לתמונה */
+    animation: float 3s ease-in-out infinite; /* הפעלת האנימציה */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0); /* מיקום התחלתי וסופי */
+    }
+    50% {
+        transform: translateY(-20px); /* הרמת הלוגו */
+    }
 }
 
 main {
