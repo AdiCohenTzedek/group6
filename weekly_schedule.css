@@ -72,11 +72,10 @@ thead th:first-child {
 tbody td:first-child:hover,
 thead th:first-child:hover {
     background-color: #5a6e5d; /* מניעת שינוי צבע ב-hover */
-    cursor: default; /* מוסיף סמן יד כאשר העכבר עובר מעל */
+    cursor: default; /* מניעת יד */
 }
 
 /* הוספת הגדרת סטייל */
 td.highlight {
     background-color: #cccccc !important; /* צבע רקע כהה יותר להדגשה */
-    cursor: pointer; /* מוסיף סמן יד כאשר העכבר עובר מעל */
 }

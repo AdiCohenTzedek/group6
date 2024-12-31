@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-//the connection between html to JS at weekly_schedule
+// חיבור ל-JS עבור מערכת השעות
 document.addEventListener('DOMContentLoaded', () => {
     const scheduleTable = document.querySelector('.schedule-container table');
 
@@ -119,10 +119,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
     const cells = document.querySelectorAll('td');
     cells.forEach(cell => {
         cell.addEventListener('mouseenter', () => {
-            if (cell.textContent.trim() !== '') {
+            if (cell.textContent.trim() !== '' && cell.cellIndex !== 0) { // מונע הדגשה בטור הראשון
                 cell.classList.add('highlight');
             }
         });
