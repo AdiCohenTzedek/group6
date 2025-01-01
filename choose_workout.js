@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const time = workoutItem.querySelector('.time').textContent;
 
       // הוספת הודעה קופצת מותאמת אישית
-      alert(`נבחר אימון: ${workoutInfo}\nמאמן: ${trainerName}\nשעה: ${time}`);
+      if (confirm(`נבחר אימון: ${workoutInfo}\nשעה: ${time}\nלאשר את הבחירה?`)) {
+        alert("האימון נבחר בהצלחה!");
+      }
     });
   });
 });
