@@ -48,8 +48,8 @@ header h1 {
     list-style-type: disc;
     padding: 0;
     margin: 0 auto;
-    text-align: right;
     display: inline-block;
+    text-align: right;
 }
 
 .about-section li {
@@ -59,8 +59,9 @@ header h1 {
 
 .side-image {
     position: fixed;
-    width: 15vw; /* Width of the side images as a percentage of the viewport width */
-    height: 30vh; /* Height of the side images as a percentage of the viewport height */
+    width: 15%; /* Control the width as a percentage of the viewport */
+    min-width: 150px; /* Minimum width to ensure visibility */
+    max-width: 300px; /* Maximum width to avoid overly large images */
     top: 50%; /* Center vertically */
     transform: translateY(-50%); /* Adjust the positioning */
 }
@@ -73,7 +74,6 @@ header h1 {
     left: 5%;
 }
 
-/* Ensure the content fits on smaller screens */
 @media (max-width: 768px) {
     header h1, .about-section h2 {
         font-size: 1.5em;
