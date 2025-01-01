@@ -75,7 +75,3 @@ thead th:first-child:hover {
     cursor: default; /* מניעת יד */
 }
 
-/* הוספת הגדרת סטייל */
-td.highlight {
-    background-color: #cccccc !important; /* צבע רקע כהה יותר להדגשה */
-}

@@ -58,25 +58,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //the connection between html to JS at sign_up
 document.addEventListener('DOMContentLoaded', () => {
-  //(Sign In Form)
-  const signUpForm = document.querySelector('.sign-up-form');
-  if (signUpForm) {
-    signUpForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-      // איסוף נתונים משדות הטופס
-      const email = signUpForm.querySelector('input[type="text"]').value; // הנחתי שהאימייל הוא השדה הראשון של טקסט
-      const password = signUpForm.querySelector('input[type="password"]').value;
-      const firstName = signUpForm.querySelectorAll('input[type="text"]')[1].value; // הנחתי ששם פרטי הוא השני בסדר
-      const lastName = signUpForm.querySelectorAll('input[type="text"]')[2].value; // הנחתי ששם משפחה הוא השלישי בסדר
-      const age = signUpForm.querySelector('input[type="number"]').value;
-      const phone = signUpForm.querySelector('input[type="tel"]').value;
+    const signUpForm = document.querySelector('.sign-up-form');
 
-      console.log('Sign Up Attempt:', { email, password, firstName, lastName, age, phone });
-    });
-  } else {
-    console.log('Sign Up form not found');
-  }
+    if (signUpForm) {
+        signUpForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // איסוף נתונים
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const age = document.getElementById('age').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            // בדיקות תקינות
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^05\d{8}$/;
+
+            let errorMessages = []; // משתנה לאיסוף הודעות שגיאה
+
+            // בדיקה אם כל השדות מלאים
+            if (!email || !password || !firstName || !lastName || !age || !phone) {
+                errorMessages.push('יש למלא את כל השדות.');
+            }
+
+            // בדיקת תקינות אימייל
+            if (email && !emailRegex.test(email)) {
+                errorMessages.push('אימייל לא תקין. יש להזין כתובת מייל תקינה.');
+            }
+
+            // בדיקת תקינות טלפון
+            if (phone && !phoneRegex.test(phone)) {
+                errorMessages.push('מספר טלפון לא תקין. יש להזין מספר שמתחיל ב-05 וכולל 10 ספרות.');
+            }
+
+            // אם יש שגיאות, הצגת הודעה
+            if (errorMessages.length > 0) {
+                alert(errorMessages.join('\n')); // הצגת כל הודעות השגיאה ברצף
+                return;
+            }
+
+            // אם הכל תקין
+            alert('הרישום בוצע בהצלחה!');
+        });
+    } else {
+        console.log('טופס הרשמה לא נמצא');
+    }
 });
+
+
 
 //the connection between html to JS at home_page
 document.addEventListener('DOMContentLoaded', () => {
@@ -87,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     links.forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault(); // מניעת השליחה הרגילה של הקישור
-            const userChoice = confirm('האם אתה בטוח שאתה רוצה לעבור לעמוד חיצוני? לחץ OK כדי לעבור או Cancel כדי להישאר');
+            const userChoice = confirm('האם אתה בטוח שאתה רוצה לעבור לעמוד חיצוני? לחץ אישור כדי לעבור או ביטול כדי להישאר');
             if (userChoice) {
                 window.location.href = this.href; // מעביר את המשתמש לקישור אם בחר OK
             }
@@ -95,43 +126,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
 // חיבור ל-JS עבור מערכת השעות
 document.addEventListener('DOMContentLoaded', () => {
     const scheduleTable = document.querySelector('.schedule-container table');
 
-    scheduleTable.addEventListener('click', function(event) {
-        const target = event.target;
-        if (target.tagName === 'TD' && target.cellIndex > 0) {
-            const time = target.parentNode.cells[0].textContent;
-            const day = scheduleTable.rows[0].cells[target.cellIndex].textContent;
-            const activity = target.textContent;
-
-            // הצגת הפרטים של השיעור
-            alert(`שעה: ${time}\nיום: ${day}\nפעילות: ${activity}`);
-
-            // שאלה אם המשתמש רוצה להרשם לשיעור
-            const register = confirm('האם תרצה להרשם לשיעור זה?');
-            if (register) {
-                alert('נרשמת בהצלחה לשיעור!');
-                // שאלה על הוספת תזכורת
-                const acceptReminder = confirm('האם תרצה לקבל תזכורת לשיעור זה 10 דקות לפני שהוא מתחיל?');
-                if (acceptReminder) {
-                    alert('תזכורת נוספה בהצלחה!');
-                }
-            }
-        }
-    });
-
     const cells = document.querySelectorAll('td');
     cells.forEach(cell => {
-        cell.addEventListener('mouseenter', () => {
-            if (cell.textContent.trim() !== '' && cell.cellIndex !== 0) { // מונע הדגשה בטור הראשון
+        // בדיקה רק לתאים שמכילים שיעורים, לא תאי שעות
+        if (cell.cellIndex !== 0) {
+            cell.addEventListener('mouseenter', () => {
                 cell.classList.add('highlight');
-            }
-        });
-        cell.addEventListener('mouseleave', () => {
-            cell.classList.remove('highlight');
-        });
+            });
+            cell.addEventListener('mouseleave', () => {
+                cell.classList.remove('highlight');
+            });
+        }
     });
 });
+
 
