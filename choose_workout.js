@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const addButtons = document.querySelectorAll('.workout-list .add-button');
   addButtons.forEach(button => {
     button.addEventListener('click', function () {
-      // הסרת הסימון מכל השיעורים האחרים
+
       document.querySelectorAll('.workout-item.selected').forEach(item => item.classList.remove('selected'));
 
       // choosing workout
