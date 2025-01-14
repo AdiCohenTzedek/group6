@@ -1,4 +1,4 @@
-// the connection between html to JS at choose_workout
+
 document.addEventListener('DOMContentLoaded', () => {
   const addButtons = document.querySelectorAll('.workout-list .add-button');
   addButtons.forEach(button => {
@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // הסרת הסימון מכל השיעורים האחרים
       document.querySelectorAll('.workout-item.selected').forEach(item => item.classList.remove('selected'));
 
-      // הוספת הסימון לשיעור הנוכחי
+      // choosing workout
       const workoutItem = this.closest('.workout-item');
       workoutItem.classList.add('selected');
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const trainerName = workoutItem.querySelector('.trainer').textContent;
       const time = workoutItem.querySelector('.time').textContent;
 
-      // הוספת הודעה קופצת מותאמת אישית
+      // notify the user and confirm the workout
       if (confirm(`נבחר אימון: ${workoutInfo}\nשעה: ${time}\nלאשר את הבחירה?`)) {
         alert("האימון נבחר בהצלחה!");
       }

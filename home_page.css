@@ -1,17 +1,19 @@
-/* סגנון כללי */
+
 body {
     font-family: 'Calibri', Arial, sans-serif;
     margin: 0;
     padding: 0;
     direction: rtl;
-    background-color: #dff0d8; /* רקע ירוק פסטל */
-    color: #333; /* טקסט כהה */
+    background-color: #dff0d8;
+    color: #333;
 }
 
 header {
     background-color: #dff0d8;
     color: #fff;
     padding: 15px 20px;
+    text-align: center;
+    margin-bottom: 0;
     text-align: center;
 }
 
@@ -20,22 +22,17 @@ header h1 {
     font-size: 2.5em;
 }
 
-header {
-    margin-bottom: 0; /* ביטול רווחים נוספים בכותרת */
-    text-align: center; /* שמירה על מיקום התמונה במרכז */
-}
-
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 150px); /* גובה הדף פחות הכותרת והכותרת התחתונה */
+    height: calc(100vh - 150px);
 }
 
 .nav-buttons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* שתי עמודות */
-    gap: 15px; /* רווח בין הכפתורים */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
     text-align: center;
 }
 
@@ -44,25 +41,25 @@ main {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #5a6e5d; /* אפור כהה */
-    background-color: #f5f5f5; /* רקע בהיר */
-    border: 2px solid #ddd; /* מסגרת אפורה בהירה */
-    border-radius: 10px; /* קצוות מעוגלים */
+    color: #5a6e5d;
+    background-color: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 10px;
     padding: 10px;
     font-size: 1.1em;
-    height: 80px; /* גובה מלבני */
-    width: 200px; /* רוחב מלבני */
+    height: 80px;
+    width: 200px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* צל קל */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-buttons a:hover {
-    background-color: #e0e0e0; /* אפור קצת יותר כהה */
-    transform: scale(1.05); /* הגדלה קלה */
+    background-color: #e0e0e0;
+    transform: scale(1.05);
 }
 
 footer {
-    background-color: #5a6e5d; /* אפור כהה */
+    background-color: #5a6e5d;
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -74,27 +71,27 @@ footer {
 .logo {
     display: block;
     margin: 0 auto;
-    max-width: 500px; /* הגדלת הרוחב המרבי של התמונה */
-    width: 100%; /* התאמת הרוחב למסך */
-    height: auto; /* שמירה על פרופורציות */
-    margin-bottom: 20px; /* צמצום הרווח מתחת לתמונה */
-    animation: float 3s ease-in-out infinite; /* הפעלת האנימציה */
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite; /* animation */
 }
 
 @keyframes float {
     0%, 100% {
-        transform: translateY(0); /* מיקום התחלתי וסופי */
+        transform: translateY(0);
     }
     50% {
-        transform: translateY(-20px); /* הרמת הלוגו */
+        transform: translateY(-20px);
     }
 }
 
 main {
     display: flex;
-    flex-direction: column; /* הצגת התוכן בצורה אנכית */
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* מיקום קרוב לתמונה */
-    gap: 10px; /* רווח אחיד בין הכפתורים */
-    margin-top: -30px; /* צמצום נוסף של הרווח מעל הכפתורים */
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: -30px;
 }

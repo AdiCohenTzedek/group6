@@ -2,8 +2,8 @@ body {
     font-family: 'Calibri', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #dff0d8; /* רקע ירוק פסטל */
-    color: #333; /* טקסט כהה */
+    background-color: #dff0d8;
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@ body {
 }
 
 h1 {
-    color: #5a6e5d; /* אפור כהה */
+    color: #5a6e5d;
     margin-bottom: 20px;
 }
 
@@ -43,7 +43,7 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #5a6e5d; /* אפור כהה */
+    border-color: #5a6e5d;
 }
 
 .actions {

@@ -1,22 +1,22 @@
-/* עיצוב כללי */
+
 body {
     font-family: 'Calibri', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #dff0d8; /* רקע ירוק פסטל */
+    background-color: #dff0d8;
     color: #5a6e5d;
     text-align: center;
     direction: rtl;
 }
 
-/* כותרת */
+
 header h1 {
     font-size: 2.5em;
     margin: 20px 0;
     color: #5a6e5d;
 }
 
-/* עיצוב טבלה */
+
 .schedule-container {
     max-width: 800px;
     margin: 0 auto;
@@ -32,12 +32,13 @@ table {
 }
 
 thead th {
-    background-color: #5a6e5d; /* ירוק */
+    background-color: #5a6e5d;
     color: white;
     font-size: 1.5em;
     padding: 10px;
     text-align: center;
     border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 tbody td {
@@ -48,7 +49,7 @@ tbody td {
 }
 
 tbody td:not(:empty) {
-    background-color: #e8f5e9; /* רקע בהיר עבור תאים מלאים */
+    background-color: #e8f5e9;
     border-radius: 5px;
 }
 
@@ -56,10 +57,10 @@ tbody td:empty {
     background-color: transparent;
 }
 
-/* עיצוב טור השעות */
+
 tbody td:first-child,
 thead th:first-child {
-    background-color: #5a6e5d; /* ירוק */
+    background-color: #5a6e5d;
     color: white;
     font-weight: bold;
     text-align: right;
@@ -71,7 +72,26 @@ thead th:first-child {
 
 tbody td:first-child:hover,
 thead th:first-child:hover {
-    background-color: #5a6e5d; /* מניעת שינוי צבע ב-hover */
-    cursor: default; /* מניעת יד */
+    background-color: #5a6e5d;
+    cursor: default;
+}
+
+
+.btn-home {
+    display: inline-block;
+    background-color: #f5f5f5;
+    color: #5a6e5d;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-home:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
 }
 

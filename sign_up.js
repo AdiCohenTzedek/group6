@@ -1,5 +1,5 @@
 const user = {
-    // פונקציות לניהול הרשמה ופרטי משתמש
+
     signUpForm: document.querySelector('.sign-up-form'),
 
     init: function() {
@@ -27,10 +27,11 @@ const user = {
 
         const isValid = this.validateSignUpForm(email, password, firstName, lastName, age, phone);
 
+        // we chose to print this check in the console just so you can see we managed to insert to the user object what we needed,
+        // for security reasons we chose not to show the password
         if (isValid) {
             console.log({
                 email: email,
-                password: password,  // זהירות: הדפסת סיסמאות בקונסול אינה בטוחה!
                 firstName: firstName,
                 lastName: lastName,
                 age: age,
