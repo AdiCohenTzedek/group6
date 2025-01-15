@@ -26,11 +26,11 @@
 
 ### **נצרף צילומי מסך של האתר למקרה ו:**
 
-<img src="photos%20for%20readMe/Photo1.jpeg" alt="תיאור התמונה 1" width="400">
-<img src="photos%20for%20readMe/Photo2.jpeg" alt="תיאור התמונה 2" width="400">
-<img src="photos%20for%20readMe/Photo3.jpeg" alt="תיאור התמונה 3" width="400">
-<img src="photos%20for%20readMe/Photo4.jpeg" alt="תיאור התמונה 4" width="400">
-<img src="photos%20for%20readMe/Photo5.jpeg" alt="תיאור התמונה 5" width="400">
-<img src="photos%20for%20readMe/Photo6.jpeg" alt="תיאור התמונה 6" width="400">
+<img src="photos_for_readme/Photo1.jpeg" alt="תיאור התמונה 1" width="400">
+<img src="photos_for_readme/Photo2.jpeg" alt="תיאור התמונה 2" width="400">
+<img src="photos_for_readme/Photo3.jpeg" alt="תיאור התמונה 3" width="400">
+<img src="photos_for_readme/Photo4.jpeg" alt="תיאור התמונה 4" width="400">
+<img src="photos_for_readme/Photo5.jpeg" alt="תיאור התמונה 5" width="400">
+<img src="photos_for_readme/Photo6.jpeg" alt="תיאור התמונה 6" width="400">
 
 
