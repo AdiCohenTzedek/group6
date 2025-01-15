@@ -27,10 +27,10 @@
 ### **נצרף צילומי מסך של האתר למקרה ו:**
 
 <img src="photos%20for%20readMe/Photo1.jpeg" alt="תיאור התמונה" width="400">
-<img src="photos%20for%20readMe/Photo2.jpeg" alt="תיאור התמונה" width="400">
-<img src="photos%20for%20readMe/Photo3.jpeg" alt="תיאור התמונה" width="400">
-<img src="photos%20for%20readMe/Photo4.jpeg" alt="תיאור התמונה" width="400">
-<img src="photos%20for%20readMe/Photo5.jpeg" alt="תיאור התמונה" width="400">
-<img src="photos%20for%20readMe/Photo6.jpeg" alt="תיאור התמונה" width="400">
+<img src="photos%20for%20readMe/Photo2.jpeg" alt="2תיאור התמונה" width="400">
+<img src="photos%20for%20readMe/Photo3.jpeg" alt="3תיאור התמונה" width="400">
+<img src="photos%20for%20readMe/Photo4.jpeg" alt="4תיאור התמונה" width="400">
+<img src="photos%20for%20readMe/Photo5.jpeg" alt="5תיאור התמונה" width="400">
+<img src="photos%20for%20readMe/Photo6.jpeg" alt="6תיאור התמונה" width="400">
 
 
