@@ -26,3 +26,6 @@
 
 ### **נצרף צילומי מסך של האתר למקרה ו:**
 
+<img src="photos%20for%20readMe/Photo1.jpeg" alt="תיאור התמונה" width="300">
+
+
