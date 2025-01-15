@@ -26,11 +26,10 @@
 
 ### **נצרף צילומי מסך של האתר למקרה ו:**
 
-<img src="photos_for_readme/Photo1.jpeg" alt="תיאור התמונה 1" width="400">
-<img src="photos_for_readme/Photo2.jpeg" alt="תיאור התמונה 2" width="400">
-<img src="photos_for_readme/Photo3.jpeg" alt="תיאור התמונה 3" width="400">
-<img src="photos_for_readme/Photo4.jpeg" alt="תיאור התמונה 4" width="400">
-<img src="photos_for_readme/Photo5.jpeg" alt="תיאור התמונה 5" width="400">
-<img src="photos_for_readme/Photo6.jpeg" alt="תיאור התמונה 6" width="400">
-
+<img src="C:\Users\User\PycharmProjects\group6\photos for readMe\Photo1.jpeg" alt="תיאור התמונה 1" width="400">
+<img src="C:\Users\User\PycharmProjects\group6\photos for readMe\Photo2.jpeg" alt="תיאור התמונה 2" width="400">
+<img src="C:\Users\User\PycharmProjects\group6\photos for readMe\Photo3.jpeg" alt="תיאור התמונה 3" width="400">
+<img src="C:\Users\User\PycharmProjects\group6\photos for readMe\Photo4.jpeg" alt="תיאור התמונה 4" width="400">
+<img src="C:\Users\User\PycharmProjects\group6\photos for readMe\Photo5.jpeg" alt="תיאור התמונה 5" width="400">
+<img src="C:\Users\User\PycharmProjects\group6\photos for readMe\Photo6.jpeg" alt="תיאור התמונה 6" width="400">
 
