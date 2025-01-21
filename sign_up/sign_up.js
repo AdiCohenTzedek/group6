@@ -1,5 +1,4 @@
 const user = {
-
     signUpForm: document.querySelector('.sign-up-form'),
 
     init: function() {
@@ -27,8 +26,7 @@ const user = {
 
         const isValid = this.validateSignUpForm(email, password, firstName, lastName, age, phone);
 
-        // we chose to print this check in the console just so you can see we managed to insert to the user object what we needed,
-        // for security reasons we chose not to show the password
+        // אנו בודקים את הנתונים בקונסולה לפני שנשלח אותם לשרת
         if (isValid) {
             console.log({
                 email: email,
@@ -37,7 +35,35 @@ const user = {
                 age: age,
                 phone: phone
             });
-            alert('הרישום בוצע בהצלחה!');
+
+            // שליחה לשרת באמצעות fetch
+            fetch('http://127.0.0.1:5000/sign_up', {  // ודא שכתובת ה-URL נכונה
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    password: password, // הוספתי גם את הסיסמא
+                    first_name: firstName,
+                    last_name: lastName,
+                    age: age,
+                    phone: phone
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('הרישום בוצע בהצלחה!');
+                } else {
+                    response.json().then(data => {
+                        alert(data.error || 'שגיאה בתהליך הרישום.');
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('שגיאה בתקשורת עם השרת.');
+            });
         }
     },
 
