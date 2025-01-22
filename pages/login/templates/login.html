@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../login/login.css">
+    <link rel="stylesheet" href="{{ url_for('login.static', filename='css/login.css') }}">
 </head>
 <body>
     <div class="login-container">
@@ -21,9 +21,11 @@
             </div>
         </form>
         <p class="signup">
-            not a user yet? sign in <a href="sign_up.html">here</a>
+            not a user yet? sign in <a href="{{ url_for('sign_up.sign_up_func') }}">here</a>
         </p>
     </div>
-<script src="../login/login.js"></script>
+<script src="../static/js/login.js"></script>
 </body>
 </html>
+
+

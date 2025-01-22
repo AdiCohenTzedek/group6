@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>מערכת השעות</title>
-    <link rel="stylesheet" href="../weekly_schedule/weekly_schedule.css">
+    <link rel="stylesheet" href="{{ url_for('weekly_schedule.static', filename='css/weekly_schedule.css') }}">
 </head>
 <body>
     <header>
@@ -61,7 +61,7 @@
         </div>
 
         <div class="button-container">
-            <a href="home_page.html" class="btn-home">חזרה לדף הראשי</a>
+            <a href="home_page" class="btn-home">חזרה לדף הראשי</a>
         </div>
     </main>
 </body>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>בחירת אימון</title>
-    <link rel="stylesheet" href="../choose_workout/choose_workout.css">
+    <link rel="stylesheet" href="{{ url_for('choose_workout.static', filename='css/choose_workout.css') }}">
 </head>
 <body>
     <header>
@@ -57,9 +57,9 @@
 
         <!--        button to return to home_page-->
         <div class="button-container">
-            <a href="home_page.html" class="btn-home">חזרה לדף הראשי</a>
+            <a href="/home_page" class="btn-home">חזרה לדף הראשי</a>
         </div>
     </main>
-<script src="../choose_workout/choose_workout.js"></script>
+<script src="../static/js/choose_workout.js"></script>
 </body>
 </html>

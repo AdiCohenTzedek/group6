@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifted - ניהול סטודיו אימונים</title>
+    <link rel="stylesheet" href="{{ url_for('home_page.static', filename='css/home_page.css') }}">
+</head>
+<body>
+    <header>
+       <img src="{{ url_for('home_page.static', filename='lifted_logo.png') }}" alt="Logo" class="logo">
+    </header>
+    <main>
+ <div class="nav-buttons">
+            <a href="/login">החשבון שלי</a>
+            <a href="/weekly_schedule">מערכת שעות</a>
+            <a href="#follow">עקבו אחרינו</a>
+            <a href="/about_us">קצת עלינו</a>
+        </div>
+    </main>
+</body>
+</html>

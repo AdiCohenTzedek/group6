@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>יצירת חשבון</title>
-    <link rel="stylesheet" href="../sign_up/sign_up.css">
+    <link rel="stylesheet" href="{{ url_for('sign_up.static', filename='css/sign_up.css') }}">
 </head>
 <body>
     <header>
@@ -37,11 +37,12 @@
                 <input type="tel" id="phone" placeholder="טלפון">
             </div>
             <div class="button-container">
-                <a href="../login/login.html" class="btn-back">חזרה</a>
+                <a href="/login" class="btn-back">חזרה</a>
                 <button type="submit" class="btn-submit">יצירת חשבון</button>
             </div>
         </form>
     </main>
-    <script src="../sign_up/sign_up.js"></script>
+    <script src="{{ url_for('sign_up.static', filename='js/sign_up.js') }}"></script>
+
 </body>
 </html>
