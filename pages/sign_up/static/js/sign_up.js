@@ -37,7 +37,7 @@ const user = {
             });
 
             // שליחה לשרת באמצעות fetch
-            fetch('http://127.0.0.1:5000/sign_up', {  // ודא שכתובת ה-URL נכונה
+            fetch('/sign_up', {  // ודא שכתובת ה-URL נכונה
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

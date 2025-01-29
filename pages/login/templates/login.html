@@ -21,10 +21,10 @@
             </div>
         </form>
         <p class="signup">
-            not a user yet? sign in <a href="{{ url_for('sign_up.sign_up_func') }}">here</a>
+            not a user yet? sign in <a href="/sign_up">here</a>
         </p>
     </div>
-<script src="../static/js/login.js"></script>
+<script src="{{ url_for('login.static', filename='js/login.js') }}"></script>
 </body>
 </html>
 
