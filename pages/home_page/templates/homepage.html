@@ -1,22 +1,24 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lifted - ניהול סטודיו אימונים</title>
+{% extends "base.html" %}
+
+{% block title %}דף הבית - Lifted{% endblock %}
+
+{% block styles %}
     <link rel="stylesheet" href="{{ url_for('home_page.static', filename='css/home_page.css') }}">
-</head>
-<body>
-    <header>
-       <img src="{{ url_for('home_page.static', filename='lifted_logo.png') }}" alt="Logo" class="logo">
-    </header>
-    <main>
- <div class="nav-buttons">
-            <a href="/login">החשבון שלי</a>
-            <a href="/weekly_schedule">מערכת שעות</a>
-            <a href="#follow">עקבו אחרינו</a>
-            <a href="/about_us">קצת עלינו</a>
+{% endblock %}
+
+{% block content %}
+    <div class="home-container">
+        <!-- לוגו בפינה השמאלית העליונה -->
+        <div class="logo-container">
+            <img src="{{ url_for('home_page.static', filename='lifted_logo.png') }}" alt="Lifted Logo">
         </div>
-    </main>
-</body>
-</html>
+
+        <div class="image-container">
+            <img src="{{ url_for('home_page.static', filename='vibe.jpg') }}" alt="Fitness Studio Vibe">
+        </div>
+
+        <div class="motivation-container">
+            <h2>אימון הוא לא עונש, הוא חגיגה של מה שהגוף שלך יכול לעשות!</h2>
+        </div>
+    </div>
+{% endblock %}

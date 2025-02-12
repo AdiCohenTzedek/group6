@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ברוכים הבאים{% endblock %}</title>
+
+    <!-- קובץ CSS כללי -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- קובצי CSS נוספים של עמודים ספציפיים -->
+    {% block styles %}{% endblock %}
+</head>
+<body>
+
+    <!-- ניווט -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="{{ url_for('about_us.about_us_func') }}">אודות</a></li>
+            <li><a href="{{ url_for('weekly_schedule.weekly_schedule_func') }}">מערכת שעות</a></li>
+            <li><a href="{{ url_for('choose_workout.choose_workout_func') }}">בחירת אימון</a></li>
+            <li><a href="{{ url_for('login.login_func') }}">התחברות</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>
