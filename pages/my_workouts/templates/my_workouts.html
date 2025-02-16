@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}האימונים שלי{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('my_workouts.static', filename='css/my_workouts.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>שלום, {{ session.get('user_data', {}).get('first_name', 'משתמש') }}</h2>
+        <h2>האימונים שלך:</h2>
+
+        <div class="workout-list">
+            {% for workout in workouts %}
+                <div class="workout-item"
+                     data-workout-type="{{ workout.workout_type }}"
+                     data-day="{{ workout.day }}"
+                     data-time="{{ workout.time }}">
+                    <strong>{{ workout.workout_type }}</strong> עם {{ workout.trainer }}<br>
+                    ביום {{ workout.day }} בשעה {{ workout.time }}
+                    <button class="remove-button">-</button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- חיבור לקובץ ה-JS -->
+    <script src="{{ url_for('my_workouts.static', filename='js/my_workouts.js') }}"></script>
+{% endblock %}

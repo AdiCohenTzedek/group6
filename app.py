@@ -33,3 +33,8 @@ from pages.sign_up.sign_up import sign_up
 
 app.register_blueprint(sign_up)
 
+from pages.my_workouts.my_workouts import my_workouts
+
+app.register_blueprint(my_workouts)
+
+

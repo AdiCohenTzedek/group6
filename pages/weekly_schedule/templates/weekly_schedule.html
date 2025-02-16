@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מערכת השעות</title>
+{% extends "base.html" %}
+
+{% block title %}מערכת השעות{% endblock %}
+
+{% block styles %}
     <link rel="stylesheet" href="{{ url_for('weekly_schedule.static', filename='css/weekly_schedule.css') }}">
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <header>
         <h1>מערכת השעות</h1>
     </header>
+
     <main>
         <div class="schedule-container">
             <table>
@@ -59,10 +60,5 @@
                 </tbody>
             </table>
         </div>
-
-        <div class="button-container">
-            <a href="home_page" class="btn-home">חזרה לדף הראשי</a>
-        </div>
     </main>
-</body>
-</html>
+{% endblock %}

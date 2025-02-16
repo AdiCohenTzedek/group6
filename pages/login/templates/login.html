@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+{% extends "base.html" %}
+
+{% block title %}כניסה למערכת{% endblock %}
+
+{% block styles %}
     <link rel="stylesheet" href="{{ url_for('login.static', filename='css/login.css') }}">
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <div class="login-container">
         <h1>כניסה למערכת</h1>
         <form action="#" method="post" class="login-form">
@@ -21,11 +21,9 @@
             </div>
         </form>
         <p class="signup">
-            not a user yet? sign in <a href="/sign_up">here</a>
+            not a user yet? sign in <a href="{{ url_for('sign_up.sign_up_func') }}">here</a>
         </p>
     </div>
-<script src="{{ url_for('login.static', filename='js/login.js') }}"></script>
-</body>
-</html>
 
-
+    <script src="{{ url_for('login.static', filename='js/login.js') }}"></script>
+{% endblock %}

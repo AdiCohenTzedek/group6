@@ -13,15 +13,26 @@
 </head>
 <body>
 
-    <!-- ניווט -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="{{ url_for('about_us.about_us_func') }}">אודות</a></li>
-            <li><a href="{{ url_for('weekly_schedule.weekly_schedule_func') }}">מערכת שעות</a></li>
-            <li><a href="{{ url_for('choose_workout.choose_workout_func') }}">בחירת אימון</a></li>
+ <nav class="navbar">
+    <ul>
+        <li><a href="{{ url_for('home_page.home_page_func') }}">עמוד הבית</a></li>
+        <li><a href="{{ url_for('about_us.about_us_func') }}">אודות</a></li>
+        <li><a href="{{ url_for('weekly_schedule.weekly_schedule_func') }}">מערכת שעות</a></li>
+        <li><a href="{{ url_for('choose_workout.choose_workout_func') }}">בחירת אימון</a></li>
+        <li><a href="{{ url_for('my_workouts.my_workouts_func') }}">האימונים שלי</a></li>
+
+        {% if session.get('logged_in') %}
+            <li class="user-info">
+                שלום, {{ session.get('user_data', {}).get('first_name', 'משתמש') }}
+                <a href="{{ url_for('login.logout_func') }}" class="logout-button">התנתקות</a>
+            </li>
+        {% else %}
             <li><a href="{{ url_for('login.login_func') }}">התחברות</a></li>
-        </ul>
-    </nav>
+        {% endif %}
+    </ul>
+</nav>
+
+
 
     <main>
         {% block content %}{% endblock %}

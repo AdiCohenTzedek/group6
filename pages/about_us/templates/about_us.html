@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="he" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>האימונים שלנו</title>
+{% extends "base.html" %}
+
+{% block title %}האימונים שלנו{% endblock %}
+
+{% block styles %}
     <link rel="stylesheet" href="{{ url_for('about_us.static', filename='css/about_us.css') }}">
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <header>
         <h1>האימונים שלנו</h1>
     </header>
+
     <main>
         <div class="training-section">
             <div class="training-list">
@@ -23,6 +24,7 @@
                 </ul>
             </div>
         </div>
+
         <section class="about-section">
             <h2>קצת עלינו</h2>
             <ul>
@@ -30,13 +32,9 @@
                 <li>שעות פעילות: א'-ה' 8:30-20:00, ו' 8:30-12:00</li>
             </ul>
         </section>
+
         <img src="{{ url_for('about_us.static', filename='studio1.jpg') }}" alt="תמונה ימנית" class="side-image right">
         <img src="{{ url_for('about_us.static', filename='studio2.jpg') }}" alt="תמונה שמאלית" class="side-image left">
 
-<!--        button to return to home_page-->
-        <div class="button-container">
-            <a href="/home_page" class="btn-home">חזרה לדף הראשי</a>
-        </div>
     </main>
-</body>
-</html>
+{% endblock %}

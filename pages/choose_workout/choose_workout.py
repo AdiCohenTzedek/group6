@@ -66,38 +66,3 @@ def register_workout():
         return jsonify({"success": True, "message": "האימון נשמר בהצלחה!"})
     except Exception as e:
         return jsonify({"error": f"שגיאה בהכנסת האימון: {str(e)}"}), 500
-
-@choose_workout.route('/cancel_workout', methods=['DELETE'])
-def cancel_workout():
-    if 'username' not in session:
-        return jsonify({"error": "אין משתמש מחובר"}), 401
-
-    data = request.get_json()
-    if not data or "day" not in data or "time" not in data:
-        return jsonify({"error": "נתונים חסרים"}), 400
-
-    email = session['username']
-    day = data.get("day")
-    time = data.get("time")
-
-    # בדיקה האם המשתמש רשום לאימון
-    existing_registration = workouts_registration_col.find_one({
-        "email": email,
-        "day": day,
-        "time": time
-    })
-
-    if not existing_registration:
-        return jsonify({"error": "הינך לא רשום לאימון זה!"}), 400
-
-    # מחיקת הרשמה מה-DB
-    result = workouts_registration_col.delete_one({
-        "email": email,
-        "day": day,
-        "time": time
-    })
-
-    if result.deleted_count > 0:
-        return jsonify({"success": True, "message": "האימון בוטל בהצלחה!"})
-    else:
-        return jsonify({"error": "שגיאה בביטול האימון."}), 500

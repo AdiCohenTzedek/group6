@@ -45,3 +45,10 @@ def login_func():
             return jsonify({"error": "משתמש לא קיים"}), 404
 
     return render_template('login.html')
+
+@login.route('/logout')
+def logout_func():
+    # ניקוי ה-Session
+    session.clear()
+    return redirect(url_for('login.login_func'))
+

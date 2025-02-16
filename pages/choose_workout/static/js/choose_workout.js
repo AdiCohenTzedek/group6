@@ -46,42 +46,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  const removeButtons = document.querySelectorAll('.workout-list .remove-button');
-  removeButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      const workoutItem = this.closest('.workout-item');
-      const workoutInfo = workoutItem.querySelector('.workout-info').textContent.trim();
-      const trainerName = workoutItem.querySelector('.trainer').textContent.trim();
-      const time = workoutItem.querySelector('.time').textContent.trim();
-      const day = document.querySelector('.weekdays .highlighted').textContent.trim();
-
-      if (confirm(`האם לבטל את ההרשמה לאימון ${workoutInfo} ביום ${day} בשעה ${time}?`)) {
-        fetch('/cancel_workout', {
-          method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            workout_type: workoutInfo,
-            trainer: trainerName,
-            time: time,
-            day: day
-          })
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            alert("ההרשמה לאימון בוטלה בהצלחה!");
-          } else {
-            alert("שגיאה בביטול: " + data.error);
-          }
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          alert("שגיאה בתקשורת עם השרת.");
-        });
-      }
-    });
-  });
 });
