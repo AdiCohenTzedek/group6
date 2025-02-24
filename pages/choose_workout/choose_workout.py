@@ -2,7 +2,6 @@ from flask import Blueprint, render_template, session, request, jsonify
 from connector_DB import workouts_registration_col, workouts_col
 
 
-# יצירת Blueprint
 choose_workout = Blueprint(
     'choose_workout',
     __name__,
@@ -11,14 +10,11 @@ choose_workout = Blueprint(
     template_folder='templates'
 )
 
-# Route להצגת דף בחירת האימון
 @choose_workout.route('/choose_workout')
 def choose_workout_func():
     print("Session Data:", session)
     return render_template('choose_workout.html')
 
-# Route לרישום אימון שנבחר
-@choose_workout.route('/register_workout', methods=['POST'])
 @choose_workout.route('/register_workout', methods=['POST'])
 def register_workout():
     if 'username' not in session:
@@ -28,13 +24,12 @@ def register_workout():
     if not data:
         return jsonify({"error": "נתונים חסרים"}), 400
 
-    # שליפת פרטי ההרשמה מהבקשה
-    email = session['username']  # לוקח את המייל מה-Session
+
+    email = session['username']
     workout_type = data.get("workout_type")
     trainer = data.get("trainer")
     time = data.get("time")
     day = data.get("day")
-
 
     existing_registration = workouts_registration_col.find_one({
         "email": email,

@@ -57,9 +57,9 @@ header h1 {
 .side-image {
     position: fixed;
     width: 15%;
-    min-width: 150px; /* Minimum width to ensure visibility */
-    max-width: 300px; /* Maximum width to avoid overly large images */
-    top: 50%;
+    min-width: 150px;
+    max-width: 300px;
+    top: 55%;
     transform: translateY(-50%);
 }
 

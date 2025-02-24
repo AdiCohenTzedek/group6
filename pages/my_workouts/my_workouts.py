@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template, session, jsonify, request
 from connector_DB import workouts_registration_col, users_col
 
-# יצירת ה- Blueprint
 my_workouts = Blueprint(
     'my_workouts',
     __name__,
@@ -11,7 +10,6 @@ my_workouts = Blueprint(
 )
 
 
-# הצגת עמוד "האימונים שלי"
 @my_workouts.route('/my_workouts')
 def my_workouts_func():
     if 'username' not in session:
@@ -19,17 +17,16 @@ def my_workouts_func():
 
     email = session['username']
 
-    # שליפת שם המשתמש
     user = users_col.find_one({"email": email})
     first_name = user.get("firstName", "משתמש") if user else "משתמש"
 
-    # שליפת כל האימונים של המשתמש
+
     workouts = list(workouts_registration_col.find({"email": email}))
 
     return render_template("my_workouts.html", first_name=first_name, workouts=workouts)
 
 
-# מחיקת אימון
+
 @my_workouts.route('/delete_workout', methods=['POST'])
 def delete_workout():
     if 'username' not in session:
@@ -41,7 +38,7 @@ def delete_workout():
     day = data.get("day")
     time = data.get("time")
 
-    # מחיקה מה-DB
+
     result = workouts_registration_col.delete_one(
         {"email": email, "workout_type": workout_type, "day": day, "time": time})
 
